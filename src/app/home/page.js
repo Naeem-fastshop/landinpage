@@ -16,26 +16,25 @@ const page = async () => {
 
   // SSR - Server Side Rendering
   try {
-    // const res = await fetch('https://jsonplaceholder.typicode.com/posts',{
-
-    // });
-    // const courses = await res.json();
-    // console.log("Courses fetched with SSR:", courses);
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts',{
+       cache:'no-store'
+    });
+    const courses = await res.json();
+    console.log("Courses fetched with SSR:", courses);
 
     // ISR - Incremental Static Regeneration (for 60 seconds revalidation)
     // const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
     //   next: { revalidate: 60 }, // Revalidate every 60 seconds
+    //   cache:'no-store'
     // });
     // const courses = await res.json();
     
     // SSG - Static Site Generation (no revalidation, fetches only at build time)
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts/?id='+1, {
-      next: { revalidate: false },  // Don't revalidate on this page
-      headers:{
-        'Cache-Control':'no-cache'
-      }
-    });
-    const courses = await res.json();
+    // const res = await fetch('https://jsonplaceholder.typicode.com/posts/?id='+1, {
+    //   next: { revalidate: false },  // Don't revalidate on this page
+      
+    // });
+    // const courses = await res.json();
 
     return (
       <Suspense fallback={<div>Loading...</div>}>
