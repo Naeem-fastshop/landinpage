@@ -16,15 +16,15 @@ const page = async () => {
 
   // SSR - Server Side Rendering
   try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const courses = await res.json();
-    console.log("Courses fetched with SSR:", courses);
+    // const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    // const courses = await res.json();
+    // console.log("Courses fetched with SSR:", courses);
 
     // ISR - Incremental Static Regeneration (for 60 seconds revalidation)
-    // const res = await fetch('http://localhost:5000/getcourses', {
-    //   next: { revalidate: 60 }, // Revalidate every 60 seconds
-    // });
-    // const courses = await res.json();
+    const res = await fetch('http://localhost:5000/getcourses', {
+      next: { revalidate: 60 }, // Revalidate every 60 seconds
+    });
+    const courses = await res.json();
     
     // SSG - Static Site Generation (no revalidation, fetches only at build time)
     // const res = await fetch('http://localhost:5000/getcourses', {
