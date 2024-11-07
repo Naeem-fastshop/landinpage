@@ -12,15 +12,15 @@ const page = async() => {
   }
   
   // SSR
-  // const res = await fetch('http://localhost:5000/getcourses');
-  // const courses = await res.json();
-  // console.log(courses)
+  const res = await fetch('http://localhost:5000/getcourses');
+  const courses = await res.json();
+  console.log(courses)
 
   // ISR
-  const res = await fetch('http://localhost:5000/getcourses', {
-    next: { revalidate: 60 },  // Revalidate every 60 seconds
-  });
-  const courses = await res.json();
+  // const res = await fetch('http://localhost:5000/getcourses', {
+  //   next: { revalidate: 60 },  // Revalidate every 60 seconds
+  // });
+  // const courses = await res.json();
 
 
 
