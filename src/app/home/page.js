@@ -21,7 +21,7 @@ const page = async () => {
     // console.log("Courses fetched with SSR:", courses);
 
     // ISR - Incremental Static Regeneration (for 60 seconds revalidation)
-    const res = await fetch('http://localhost:5000/getcourses', {
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
       next: { revalidate: 60 }, // Revalidate every 60 seconds
     });
     const courses = await res.json();
