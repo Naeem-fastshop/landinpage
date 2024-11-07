@@ -13,7 +13,14 @@ const page = async() => {
   
   // SSR
   const res = await fetch('http://localhost:5000/getcourses');
-  const courses = await res.json();
+  const responseText = await res.text();
+  
+  if (res.ok && responseText.trim().startsWith('{')) { // Basic check for JSON
+    const data = JSON.parse(responseText);
+    console.log(data);
+  } else {
+    console.log('Invalid JSON or empty response');
+  }
   
 
   // ISR
