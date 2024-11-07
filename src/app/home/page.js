@@ -16,7 +16,7 @@ const page = async () => {
 
   // SSR - Server Side Rendering
   try {
-    const res = await fetch('http://localhost:5000/getcourses');
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const courses = await res.json();
     console.log("Courses fetched with SSR:", courses);
 

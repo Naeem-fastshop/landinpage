@@ -40,10 +40,10 @@ const About = ({ courses }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Mapping over courses array */}
           {courses.map((course) => (
-            <div key={course._id} className="p-6 bg-white rounded-lg shadow-lg">
+            <div key={course.id} className="p-6 bg-white rounded-lg shadow-lg">
               <h4 className="text-xl font-semibold mb-2 text-black">{course.title}</h4>
-              <p className="text-gray-600">{course.description}</p>
-              <p className="text-gray-500 mt-2">Instructor: {course.userId.name}</p>
+              <p className="text-gray-600">{course.body}</p>
+              <p className="text-gray-500 mt-2">Instructor: khan</p>
               <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
                 Enroll Now
               </button>

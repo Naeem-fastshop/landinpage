@@ -8,7 +8,7 @@ const Services = () => {
   useEffect(() => {
     // Fetch data for services (or courses)
     const fetchData = async () => {
-      const res = await fetch('http://localhost:5000/getcourses');
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
       const data = await res.json();
       setCourses(data); // Set the fetched data to the state
       setLoading(false); // Update loading state
@@ -35,7 +35,7 @@ const Services = () => {
                 <i className="fas fa-cogs"></i>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-black">{course.title}</h3>
-              <p className="text-gray-700">{course.description}</p>
+              <p className="text-gray-700">{course.body}</p>
             </div>
           ))}
         </div>
