@@ -5,16 +5,16 @@ import Services from '../components/Services'
 import Footer from '../components/Footer'
 
 const page = async() => {
-  if (typeof window === "undefined") {
-    console.log("This is running on the server.");
-  } else {
-    console.log("This is running on the client.");
-  }
+  // if (typeof window === "undefined") {
+  //   console.log("This is running on the server.");
+  // } else {
+  //   console.log("This is running on the client.");
+  // }
   
   // SSR
   const res = await fetch('http://localhost:5000/getcourses');
   const courses = await res.json();
-  console.log(courses)
+  
 
   // ISR
   // const res = await fetch('http://localhost:5000/getcourses', {

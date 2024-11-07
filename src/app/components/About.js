@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 
 const About = ({ courses }) => {
-  console.log("allcourses", courses); // Check the courses data in the console
   
   // Loading state if courses data is not available yet
   if (!courses || courses.length === 0) {
