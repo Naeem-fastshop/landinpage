@@ -31,6 +31,9 @@ const page = async () => {
     // SSG - Static Site Generation (no revalidation, fetches only at build time)
     const res = await fetch('https://jsonplaceholder.typicode.com/posts/?id='+1, {
       next: { revalidate: false },  // Don't revalidate on this page
+      headers:{
+        'Cache-Control':'no-cache'
+      }
     });
     const courses = await res.json();
 
