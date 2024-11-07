@@ -1,0 +1,10 @@
+PostCSS.config.mjs
+The postcss.config.mjs file is a configuration file for PostCSS, a tool that processes CSS and allows you to use plugins to transform styles in various ways. PostCSS is widely used in Next.js to enable features like CSS variables, mixins, autoprefixing, and more.
+postcss.config.mjs: Configures PostCSS plugins to transform and process your CSS, typically used for adding vendor prefixes, supporting Tailwind CSS, or other styling utilities.
+
+
+
+next.config.mjs
+The next.config.mjs file is the main configuration file for Next.js projects. It controls various aspects of how Next.js handles things like routing, plugins, and build optimizations. The .mjs extension indicates that the file uses ESM (ECMAScript Modules) syntax, which allows for the use of import and export statements
+summary
+next.config.mjs: Configures Next.js-specific features such as routing, environment variables, and build optimizations.
